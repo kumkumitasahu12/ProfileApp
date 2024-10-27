@@ -1,0 +1,44 @@
+<div class="background-image">
+  <div class="profile-container" *ngIf="profile">
+    <div class="profile-details">
+      <h2>User Profile</h2>
+      <div *ngIf="!isEditing">
+        <p><strong>Name:</strong> {{ profile.name }}</p>
+        <p><strong>Phone:</strong> {{ profile.phone }}</p>
+        <p><strong>Email:</strong> {{ profile.email }}</p>
+        <p><strong>Age:</strong> {{ profile.age }}</p>
+        <p><strong>Address:</strong> {{ profile.address }}</p>
+        <button (click)="toggleEdit()">Edit Profile</button>
+        <button (click)="toggleAddSkill()">Add Skills</button>
+      </div>
+      <div *ngIf="isEditing" class="edit-form">
+        <input [(ngModel)]="profile.name" placeholder="Name" />
+        <input [(ngModel)]="profile.phone" placeholder="Phone" />
+        <input [(ngModel)]="profile.email" placeholder="Email" />
+        <input [(ngModel)]="profile.age" placeholder="Age" />
+        <input [(ngModel)]="profile.address" placeholder="Address" />
+        <button (click)="updateProfile()">Save Changes</button>
+        <button class="cancel" (click)="toggleEdit()">Cancel</button>
+      </div>
+
+      <div *ngIf="isAddingSkill" class="add-skill-form">
+        <input [(ngModel)]="newSkill" placeholder="Add a skill" />
+        <button (click)="onAddSkill()">Add</button>
+        <button class="cancel" (click)="toggleAddSkill()">Cancel</button>
+      </div>
+
+      <div class="skills-list" *ngIf="profile.skills && profile.skills.length">
+        <h3>Skills:</h3>
+        <ul>
+          <li *ngFor="let skill of profile.skills">{{ skill }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="work-experience">
+      <app-work-experience></app-work-experience>
+    </div>
+  </div>
+  <div *ngIf="!profile">
+    <p>No user data available.</p>
+  </div>
+</div>

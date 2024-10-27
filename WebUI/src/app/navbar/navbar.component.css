@@ -1,0 +1,45 @@
+nav {
+  background-color: #808080; /* Dark background for the navbar */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding around the navbar */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center items vertically */
+}
+
+ul {
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  display: flex; /* Use flexbox for horizontal layout */
+  flex-grow: 1; /* Allow ul to grow and take space */
+}
+
+li {
+  margin-right: 20px; /* Space between list items */
+}
+
+  li:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+  }
+
+a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline from links */
+  padding: 8px 12px; /* Padding for clickable area */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+  a:hover {
+    background-color: #575757; /* Darker background on hover */
+  }
+
+/* Add styles for right alignment of the logout link */
+nav ul {
+  flex-grow: 1; /* Allow the ul to grow and push items */
+}
+
+ul li:last-child {
+  margin-left: auto; /* Push the logout link to the right */
+}

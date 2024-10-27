@@ -1,0 +1,114 @@
+body, html {
+  height: 100%; /* Ensure full height */
+  margin: 0; /* Remove default margin */
+}
+
+.background-image {
+  position: fixed; /* Fix the background image */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/images/HomePage.jpg'); /* Change to your image path */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the image */
+  z-index: -1; /* Send the background behind other elements */
+}
+
+.profile-container {
+  display: flex; /* Use Flexbox for layout */
+  justify-content: space-between; /* Space between left and right */
+  height: calc(100% - 60px); /* Adjust for the height of the navbar */
+  padding: 20px; /* Padding around the container */
+  color: #333; /* Text color */
+  position: relative; /* Positioning context for child elements */
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for clarity */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow for depth */
+  margin-top: 60px; /* Space below the navbar */
+}
+
+.profile-details {
+  flex: 1; /* Take up equal space */
+  margin-right: 20px; /* Space between profile and work experience */
+  padding: 20px; /* Padding inside profile details */
+  border-radius: 8px; /* Rounded corners */
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white for separation */
+}
+
+h2 {
+  font-size: 24px; /* Larger font for the heading */
+  margin-bottom: 20px; /* Space below heading */
+  color: #0056b3; /* Heading color */
+  text-align: center; /* Center the heading */
+}
+
+.work-experience {
+  flex: 1; /* Take up equal space */
+  padding: 20px; /* Padding inside work experience */
+  border-radius: 8px; /* Rounded corners */
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white for separation */
+}
+
+.profile-picture-wrapper {
+  display: flex; /* Flex for image and button */
+  justify-content: center; /* Center align the profile picture */
+  align-items: center; /* Align items vertically */
+  margin-bottom: 20px; /* Space below profile picture */
+  flex-direction: column; /* Stack vertically */
+}
+
+.profile-picture img {
+  border-radius: 50%; /* Round profile picture */
+  width: 120px; /* Set width */
+  height: 120px; /* Set height */
+  object-fit: cover; /* Maintain aspect ratio */
+  border: 2px solid #007bff; /* Optional border for distinction */
+  margin-bottom: 10px; /* Space below image */
+}
+
+
+.button-container {
+  text-align: center; /* Center-align the buttons */
+  margin-top: 20px; /* Optional: Space above the button container */
+}
+button {
+  padding: 10px 15px; /* Padding for buttons */
+  background-color: #007bff; /* Button color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+  margin: 0 10px; /* Space on left and right of each button */
+}
+
+  button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+input, textarea {
+  width: 100%; /* Full width of the parent container */
+  padding: 10px;
+  margin: 10px 0; /* Space between inputs */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding and border in total width */
+  transition: border-color 0.3s;
+}
+.error-message {
+  color: red; /* Error message color */
+  margin-top: 10px; /* Space above error message */
+}
+
+.link-container {
+  text-align: center; /* Center-align the link */
+}
+
+  .link-container a {
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline */
+  }
+
+    .link-container a:hover {
+      text-decoration: underline; /* Underline on hover */
+    }
