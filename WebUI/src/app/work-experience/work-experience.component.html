@@ -1,0 +1,38 @@
+<div class="work-experience-container">
+  <h2>Add Work Experience</h2>
+  <input type="text" placeholder="Job Title" [(ngModel)]="newExperience.jobTitle" />
+  <input type="text" placeholder="Company Name" [(ngModel)]="newExperience.companyName" />
+  <input type="text" placeholder="Duration" [(ngModel)]="newExperience.duration" />
+  <textarea placeholder="Description" [(ngModel)]="newExperience.description"></textarea>
+  <button (click)="addWorkExperience()">Add</button>
+</div>
+
+<div class="work-experience-list">
+  <h3>Work Experiences</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Job Title</th>
+        <th>Company Name</th>
+        <th>Duration</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let experience of workExperiences">
+        <td>{{ experience.jobTitle }}</td>
+        <td>{{ experience.companyName }}</td>
+        <td>{{ experience.duration }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let line of experience.description.split('\n')">{{ line }}</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="workExperiences.length === 0">
+    <p class="no-experience">No work experience available.</p>
+  </div>
+</div>

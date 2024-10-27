@@ -1,0 +1,7 @@
+<nav *ngIf="isLoggedIn()">
+  <ul>
+    <li><a routerLink="/profile">View Profile</a></li>
+    <li><a routerLink="/workexperience">View/Add Work Experience</a></li>
+    <li><a (click)="logout()">Logout</a></li>
+  </ul>
+</nav>
