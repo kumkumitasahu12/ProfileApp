@@ -1,114 +1,156 @@
 body, html {
-  height: 100%; /* Ensure full height */
-  margin: 0; /* Remove default margin */
+  height: 100%;
+  margin: 0;
 }
 
 .background-image {
-  position: fixed; /* Fix the background image */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/assets/images/HomePage.jpg'); /* Change to your image path */
-  background-size: cover; /* Cover the entire area */
-  background-position: center; /* Center the image */
-  z-index: -1; /* Send the background behind other elements */
+  background-image: url('/assets/images/HomePage.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
 }
 
 .profile-container {
-  display: flex; /* Use Flexbox for layout */
-  justify-content: space-between; /* Space between left and right */
-  height: calc(100% - 60px); /* Adjust for the height of the navbar */
-  padding: 20px; /* Padding around the container */
-  color: #333; /* Text color */
-  position: relative; /* Positioning context for child elements */
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for clarity */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow for depth */
-  margin-top: 60px; /* Space below the navbar */
+  display: flex;
+  justify-content: space-between;
+  height: calc(100% - 60px);
+  padding: 20px;
+  color: #333;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  margin-top: 60px;
 }
 
 .profile-details {
-  flex: 1; /* Take up equal space */
-  margin-right: 20px; /* Space between profile and work experience */
-  padding: 20px; /* Padding inside profile details */
-  border-radius: 8px; /* Rounded corners */
-  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white for separation */
+  flex: 1;
+  margin-right: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 h2 {
-  font-size: 24px; /* Larger font for the heading */
-  margin-bottom: 20px; /* Space below heading */
-  color: #0056b3; /* Heading color */
-  text-align: center; /* Center the heading */
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #0056b3;
+  text-align: center;
 }
 
 .work-experience {
-  flex: 1; /* Take up equal space */
-  padding: 20px; /* Padding inside work experience */
-  border-radius: 8px; /* Rounded corners */
-  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white for separation */
+  flex: 1;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .profile-picture-wrapper {
-  display: flex; /* Flex for image and button */
-  justify-content: center; /* Center align the profile picture */
-  align-items: center; /* Align items vertically */
-  margin-bottom: 20px; /* Space below profile picture */
-  flex-direction: column; /* Stack vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-direction: column;
 }
 
 .profile-picture img {
-  border-radius: 50%; /* Round profile picture */
-  width: 120px; /* Set width */
-  height: 120px; /* Set height */
-  object-fit: cover; /* Maintain aspect ratio */
-  border: 2px solid #007bff; /* Optional border for distinction */
-  margin-bottom: 10px; /* Space below image */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 2px solid #007bff;
+  margin-bottom: 10px;
 }
-
 
 .button-container {
-  text-align: center; /* Center-align the buttons */
-  margin-top: 20px; /* Optional: Space above the button container */
+  text-align: center;
+  margin-top: 20px;
 }
+
 button {
-  padding: 10px 15px; /* Padding for buttons */
-  background-color: #007bff; /* Button color */
-  color: white; /* Button text color */
-  border: none; /* Remove border */
-  border-radius: 4px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s; /* Smooth transition */
-  margin: 0 10px; /* Space on left and right of each button */
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 0 10px;
 }
 
   button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #0056b3;
   }
+
 input, textarea {
-  width: 100%; /* Full width of the parent container */
+  width: 100%;
   padding: 10px;
-  margin: 10px 0; /* Space between inputs */
+  margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box; /* Include padding and border in total width */
+  box-sizing: border-box;
   transition: border-color 0.3s;
 }
+
 .error-message {
-  color: red; /* Error message color */
-  margin-top: 10px; /* Space above error message */
+  color: red;
+  margin-top: 10px;
 }
 
 .link-container {
-  text-align: center; /* Center-align the link */
+  text-align: center;
 }
 
   .link-container a {
-    color: #007bff; /* Link color */
-    text-decoration: none; /* Remove underline */
+    color: #007bff;
+    text-decoration: none;
   }
 
     .link-container a:hover {
-      text-decoration: underline; /* Underline on hover */
+      text-decoration: underline;
     }
+
+.skills-certificates-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+  .skills-certificates-table th,
+  .skills-certificates-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .skills-certificates-table th {
+    background-color: #f2f2f2;
+  }
+
+  .skills-certificates-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .skills-certificates-table tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+
+.odd-row {
+  background-color: #f9f9f9;
+}
+
+/* New CSS for table scrolling */
+.table-container {
+  max-height: 300px; /* Adjust height as needed */
+  overflow-y: auto; /* Enable scrolling */
+  border: 1px solid #ddd;
+  margin-top: 20px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px; /* Optional padding */
+}

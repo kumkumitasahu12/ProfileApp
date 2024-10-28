@@ -11,11 +11,11 @@ export class NavbarComponent {
   constructor(private accountService: AccountService, private router: Router) { }
 
   isLoggedIn(): boolean {
-    return this.accountService.isLoggedIn(); // Implement this method in your AuthService
+    return this.accountService.isLoggedIn(); 
   }
 
   logout() {
-    this.accountService.logout(); // Implement this method to handle logout
-    this.router.navigate(['/login']); // Redirect to login page after logout
+    this.accountService.logout(); 
+    this.router.navigate(['/login']); 
   }
 }

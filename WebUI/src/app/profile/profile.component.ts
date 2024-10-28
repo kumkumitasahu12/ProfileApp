@@ -13,7 +13,10 @@ export class ProfileComponent implements OnInit {
   selectedFile: File | null = null;
   isEditing: boolean = false;
   isAddingSkill: boolean = false;
-  newSkill: string = ''; // Use newSkill to store the skill input
+  newSkill: string = '';
+  isAddingCertificate: boolean = false;
+  newCertificateName: string = '';
+  newCertificateIssuer: string = '';
 
   constructor(private profileService: ProfileService, private router: Router) { }
 
@@ -28,7 +31,7 @@ export class ProfileComponent implements OnInit {
 
         // Check if skills have values and extract them
         if (this.profile.skills && this.profile.skills.$values) {
-          this.profile.skills = this.profile.skills.$values.map((skill: Skill) => skill.name); // Extract skill names
+          this.profile.skills = this.profile.skills.$values.map((skill: Skill) => skill.name); 
         } else {
           this.profile.skills = []; // Ensure skills is an array
         }
@@ -125,5 +128,33 @@ export class ProfileComponent implements OnInit {
       );
     }
   }
+  // Toggle adding certificate form
+  toggleAddCertificate() {
+    this.isAddingCertificate = !this.isAddingCertificate;
+    this.newCertificateName = ''; // Clear input when toggling
+    this.newCertificateIssuer = ''; // Clear input when toggling
+  }
 
+  // Add a new certificate
+  onAddCertificate() {
+    if (this.newCertificateName && this.newCertificateIssuer) {
+      const certificateDto = {
+        name: this.newCertificateName,
+        issuer: this.newCertificateIssuer
+      };
+
+      this.profileService.addCertificate(certificateDto).subscribe(
+        response => {
+          console.log('Certificate added successfully:', response);
+          this.fetchProfile(); // Refresh profile to show updated certificates
+          this.newCertificateName = ''; // Clear input
+          this.newCertificateIssuer = ''; // Clear input
+          this.isAddingCertificate = false; // Close add certificate form
+        },
+        error => {
+          console.error('Error adding certificate:', error);
+        }
+      );
+    }
+  }
 }

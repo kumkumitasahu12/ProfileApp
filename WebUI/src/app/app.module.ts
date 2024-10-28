@@ -11,6 +11,7 @@ import { AuthInterceptor } from './_interceptor/auth.interceptor';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AddWorkexperienceComponent } from './add-workexperience/add-workexperience.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProfileComponent } from './profile/profile.component';
     RegisterComponent,
     LoginComponent,
     WorkExperienceComponent,
-    NavbarComponent
+    NavbarComponent,
+    AddWorkexperienceComponent
   ],
   imports: [
     BrowserModule,

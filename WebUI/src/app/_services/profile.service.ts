@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CertificateDto } from '../models/certificateDto';
 
 @Injectable({
   providedIn: 'root',
@@ -27,7 +28,10 @@ export class ProfileService {
 
   addSkill(skillName: string): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    // Send the skillName directly as a string
     return this.http.post(`${this.apiUrl}/skills`, JSON.stringify(skillName), { headers });
+  }
+
+  addCertificate(certificateDto: CertificateDto): Observable<any> {
+    return this.http.post(`${this.apiUrl}/certificates`, certificateDto);
   }
 }

@@ -1,5 +1,5 @@
 nav {
-  background-color: #808080; /* Dark background for the navbar */
+  background-color: #0094ff; /* Dark background for the navbar */
   color: white; /* Text color */
   padding: 10px 20px; /* Padding around the navbar */
   display: flex; /* Use flexbox for alignment */
@@ -25,7 +25,7 @@ li {
 
 a {
   color: white; /* Link color */
-  text-decoration: none; /* Remove underline from links */
+  text-decoration: solid; /* Remove underline from links */
   padding: 8px 12px; /* Padding for clickable area */
   border-radius: 4px; /* Rounded corners */
   transition: background-color 0.3s; /* Smooth transition for hover effect */

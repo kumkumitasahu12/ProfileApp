@@ -10,7 +10,9 @@
         <p><strong>Address:</strong> {{ profile.address }}</p>
         <button (click)="toggleEdit()">Edit Profile</button>
         <button (click)="toggleAddSkill()">Add Skills</button>
+        <button (click)="toggleAddCertificate()">Add Certificate</button>
       </div>
+
       <div *ngIf="isEditing" class="edit-form">
         <input [(ngModel)]="profile.name" placeholder="Name" />
         <input [(ngModel)]="profile.phone" placeholder="Phone" />
@@ -27,11 +29,40 @@
         <button class="cancel" (click)="toggleAddSkill()">Cancel</button>
       </div>
 
-      <div class="skills-list" *ngIf="profile.skills && profile.skills.length">
-        <h3>Skills:</h3>
-        <ul>
-          <li *ngFor="let skill of profile.skills">{{ skill }}</li>
-        </ul>
+      <div *ngIf="isAddingCertificate" class="add-certificate-form">
+        <input [(ngModel)]="newCertificateName" placeholder="Certificate Name" />
+        <input [(ngModel)]="newCertificateIssuer" placeholder="Issuer" />
+        <button (click)="onAddCertificate()">Add Certificate</button>
+        <button class="cancel" (click)="toggleAddCertificate()">Cancel</button>
+      </div>
+
+      <!-- Skills and Certificates Table -->
+      <div class="table-container">
+        <h3>Skills and Certificates</h3>
+        <table class="skills-certificates-table">
+          <thead>
+            <tr>
+              <th>Skills</th>
+              <th>Certificates</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let skill of profile.skills; let i = index">
+              <td [ngClass]="{'odd-row': i % 2 !== 0}">{{ skill }}</td>
+              <td [ngClass]="{'odd-row': i % 2 !== 0}">
+                <ng-container *ngIf="profile.certificates && profile.certificates.$values && profile.certificates.$values[i]">
+                  {{ profile.certificates.$values[i].name }} - {{ profile.certificates.$values[i].issuer }}
+                </ng-container>
+              </td>
+            </tr>
+            <ng-container *ngIf="profile.certificates.$values.length > profile.skills.length">
+              <tr *ngFor="let certificate of profile.certificates.$values; let j = index">
+                <td [ngClass]="{'odd-row': (j + profile.skills.length) % 2 !== 0}"></td>
+                <td [ngClass]="{'odd-row': (j + profile.skills.length) % 2 !== 0}">{{ certificate.name }} - {{ certificate.issuer }}</td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
       </div>
     </div>
     <div class="work-experience">

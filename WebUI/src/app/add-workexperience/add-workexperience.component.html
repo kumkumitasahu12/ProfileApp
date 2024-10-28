@@ -1,0 +1,8 @@
+<div class="work-experience-container">
+  <h2>Add Work Experience</h2>
+  <input type="text" placeholder="Job Title" [(ngModel)]="newExperience.jobTitle" />
+  <input type="text" placeholder="Company Name" [(ngModel)]="newExperience.companyName" />
+  <input type="text" placeholder="Duration" [(ngModel)]="newExperience.duration" />
+  <textarea placeholder="Description" [(ngModel)]="newExperience.description"></textarea>
+  <button (click)="addWorkExperience()">Add</button>
+</div>
