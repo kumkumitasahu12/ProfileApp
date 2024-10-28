@@ -18,6 +18,7 @@ namespace MyProfile.API.Models
 
         public string Address { get; set; }
         public virtual ICollection<Skill> Skills { get; set; } = new List<Skill>();
+        public virtual ICollection<Certificate> Certificates { get; set; } = new List<Certificate>();
 
     }
 }

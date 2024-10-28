@@ -22,6 +22,30 @@ namespace MyProfile.API.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("MyProfile.API.Models.Certificate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Issuer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Certificates");
+                });
+
             modelBuilder.Entity("MyProfile.API.Models.Skill", b =>
                 {
                     b.Property<int>("Id")
@@ -106,6 +130,17 @@ namespace MyProfile.API.Migrations
                     b.ToTable("WorkExperiences");
                 });
 
+            modelBuilder.Entity("MyProfile.API.Models.Certificate", b =>
+                {
+                    b.HasOne("MyProfile.API.Models.User", "User")
+                        .WithMany("Certificates")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("MyProfile.API.Models.Skill", b =>
                 {
                     b.HasOne("MyProfile.API.Models.User", "User")
@@ -119,6 +154,8 @@ namespace MyProfile.API.Migrations
 
             modelBuilder.Entity("MyProfile.API.Models.User", b =>
                 {
+                    b.Navigation("Certificates");
+
                     b.Navigation("Skills");
                 });
 #pragma warning restore 612, 618

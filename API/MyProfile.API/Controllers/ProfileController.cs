@@ -86,5 +86,31 @@ namespace MyProfile.API.Controllers
 
             return Ok(user.Skills); 
         }
+        [HttpPost("certificates")]
+        public IActionResult AddCertificates([FromBody] CertificateDto certificate)
+        {
+            var email = User.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value;
+            if (string.IsNullOrEmpty(email))
+            {
+                return BadRequest("Email not found in token");
+            }
+
+            var user = _userRepository.GetUser(email);
+            if (user == null)
+            {
+                return NotFound("Invalid User");
+            }
+
+            var newCertificate = new Certificate
+            {
+                Name = certificate.Name,
+                Issuer = certificate.Issuer,
+                UserId = user.UserId
+            };
+
+            _userRepository.AddCertificates(newCertificate);
+
+            return Ok(user.Certificates);
+        }
     }
 }

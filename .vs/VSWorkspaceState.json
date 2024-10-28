@@ -2,15 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\API\\MyProfile.API",
-    "\\API\\MyProfile.API\\Controllers",
-    "\\API\\MyProfile.API\\Data",
     "\\API\\MyProfile.API\\Models",
     "\\WebUI",
-    "\\WebUI\\WebUI",
-    "\\WebUI\\WebUI\\src",
-    "\\WebUI\\WebUI\\src\\app\\models",
-    "\\WebUI\\WebUI\\src\\app\\_services"
+    "\\WebUI\\src",
+    "\\WebUI\\src\\app",
+    "\\WebUI\\src\\app\\profile"
   ],
-  "SelectedNode": "\\WebUI",
+  "SelectedNode": "\\WebUI\\src\\app\\profile\\profile.component.ts",
   "PreviewInSolutionExplorer": false
 }

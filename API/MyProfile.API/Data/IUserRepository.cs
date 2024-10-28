@@ -7,5 +7,6 @@ namespace MyProfile.API.Data
         User GetUser(string email);
         void UpdateUser(User user);
         void AddSkill(Skill skill);
+        void AddCertificates(Certificate certificate);
     }
 }
