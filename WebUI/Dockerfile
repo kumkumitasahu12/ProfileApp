@@ -5,13 +5,13 @@ FROM node:18
 WORKDIR /app
 
 # Copy package.json and package-lock.json (if available) to the container
-COPY package*.json ./
+COPY WebUI/package*.json ./
 
 # Install the dependencies
 RUN npm install
 
 # Copy the entire application code to the container
-COPY . .
+COPY WebUI ./
 
 # Build the Angular application
 RUN npm run build --prod
