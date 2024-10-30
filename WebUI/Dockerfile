@@ -1,7 +1,26 @@
+# Use the official Node.js image
 FROM node:18
+
+# Set the working directory inside the container
 WORKDIR /app
-COPY ./WebUI/package*.json ./
+
+# Copy package.json and package-lock.json (if available) to the container
+COPY package*.json ./
+
+# Install the dependencies
 RUN npm install
-COPY ./WebUI ./
-RUN npm run build
-CMD ["npx", "http-server", "dist/web-ui"]
+
+# Copy the entire application code to the container
+COPY . .
+
+# Build the Angular application
+RUN npm run build --prod
+
+# Install a lightweight server to serve the app
+RUN npm install -g http-server
+
+# Expose the port the app runs on
+EXPOSE 8080
+
+# Command to run the server
+CMD ["http-server", "dist/web-ui", "-p", "8080"]
