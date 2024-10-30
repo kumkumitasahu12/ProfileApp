@@ -2,12 +2,12 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /app
 
-# Copy the csproj and restore dependencies
-COPY *.csproj ./
+# Copy the .csproj file and restore dependencies
+COPY API/MyProfile.API/*.csproj ./
 RUN dotnet restore
 
 # Copy the rest of the application code
-COPY . ./
+COPY API/MyProfile.API/. ./
 RUN dotnet publish -c Release -o out
 
 # Use the official ASP.NET image for running the application
