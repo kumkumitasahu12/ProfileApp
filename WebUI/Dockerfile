@@ -4,8 +4,11 @@ FROM node:18
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json (if available) to the container
+# Copy package.json and package-lock.json to the container
 COPY WebUI/package*.json ./
+
+# Install Angular CLI globally
+RUN npm install -g @angular/cli
 
 # Install the dependencies
 RUN npm install
