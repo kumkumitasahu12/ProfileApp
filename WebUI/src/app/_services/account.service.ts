@@ -9,7 +9,7 @@ import { LoginResponse } from '../models/loginResponse';
 })
 export class AccountService {
   private loggedIn = false;
-  private apiUrl = 'https://localhost:5001/api/Account';
+  private apiUrl = 'https://profileapp-7svu.onrender.com/api/Account';
 
   constructor(private http: HttpClient) { }
 
