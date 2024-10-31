@@ -74,12 +74,12 @@ builder.Services.AddAuthentication(options =>
 // Add CORS policy
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll",
+    options.AddPolicy("AllowFrontend",
         builder =>
         {
-            builder.AllowAnyOrigin() // Allow any origin
-                   .AllowAnyMethod() // Allow any HTTP method
-                   .AllowAnyHeader(); // Allow any header
+            builder.WithOrigins("https://profileapp-1.onrender.com") // Update this URL
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
         });
 });
 
