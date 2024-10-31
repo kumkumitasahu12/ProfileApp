@@ -77,7 +77,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend",
         builder =>
         {
-            builder.WithOrigins("https://profileapp-1.onrender.com") // Update this URL
+            builder.WithOrigins("https://profileapp-1.onrender.com") 
                    .AllowAnyMethod()
                    .AllowAnyHeader();
         });
