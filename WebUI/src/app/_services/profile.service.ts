@@ -7,7 +7,7 @@ import { CertificateDto } from '../models/certificateDto';
   providedIn: 'root',
 })
 export class ProfileService {
-  private apiUrl = 'https://localhost:5001/api/Profile';
+  private apiUrl = 'https://profileapp-7svu.onrender.com/api/Profile';
 
   constructor(private http: HttpClient) { }
 
