@@ -11,7 +11,7 @@ import { tap } from 'rxjs/operators';
 export class WorkExperienceService {
   private workExperiencesSubject = new BehaviorSubject<WorkExperience[]>([]);
   workExperiences$ = this.workExperiencesSubject.asObservable();
-  private apiUrl = 'https://localhost:5001/api/WorkExperience';
+  private apiUrl = 'https://profileapp-7svu.onrender.com/api/WorkExperience';
 
   constructor(private http: HttpClient) { }
 
